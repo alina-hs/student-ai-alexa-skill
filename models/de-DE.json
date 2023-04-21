@@ -1,0 +1,306 @@
+{
+  "invocation": "student ai",
+  "intents": [
+    {
+      "name": "WelcomeUserIntent",
+      "phrases": []
+    },
+    {
+      "name": "BookAppointmentIntent",
+      "phrases": [
+        "Ich möchte einen Termin mit {professor} machen",
+        "Ich möchte einen Termin mit {professor} vereinbaren",
+        "Ich möchte einen Termin mit {professor} anlegen",
+        "Ich möchte einen Termin mit {professor} an dem {date} um {time} anlegen",
+        "Ich möchte einen Termin mit {professor} für den {date} um {time} anlegen",
+        "Ich möchte einen Termin mit {professor} um {time} vereinbaren",
+        "Ich möchte einen Termin mit {professor} am {date} um {time} vereinbaren",
+        "Ich möchte {date} um {time} einen Termin mit {professor} vereinbaren",
+        "Vereinbare {date} um {time} einen Termin mit {professor}",
+        "Termin machen",
+        "Termin vereinbaren",
+        "Termin am {date} erstellen",
+        "{date} einen Termin um {time} machen",
+        "Termin vereinbaren mit {professor}",
+        "Erstelle Termin mit {professor}"
+      ],
+      "inputs": [
+        {
+          "name": "professor",
+          "type": {
+            "alexa": "AMAZON.Person"
+          },
+          "alexa": {
+            "samples": ["{professor}", "mit {professor}"]
+          }
+        },
+        {
+          "name": "date",
+          "type": {
+            "alexa": "AMAZON.DATE"
+          },
+          "alexa": {
+            "samples": ["{date}", "am {date}"]
+          }
+        },
+        {
+          "name": "time",
+          "type": {
+            "alexa": "AMAZON.TIME"
+          },
+          "alexa": {
+            "samples": ["{time}", "um {time}"]
+          }
+        },
+        {
+          "name": "subject",
+          "type": {
+            "alexa": "AMAZON.SearchQuery"
+          },
+          "alexa": {
+            "samples": ["{subject}", "mit dem Betreff {subject}", "wegen {subject}"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "NewsFeedIntent",
+      "phrases": ["Lese die aktuellen News vor", "Was gibt es neues", "Intranet-News", "Aktuelles", "News"]
+    },
+    {
+      "name": "TimetableIntent",
+      "phrases": [
+        "Stundenplan",
+        "stundenplan einsehen",
+        "timetable",
+        "stundenplan vorlesen",
+        "vorlesungen heute",
+        "Wie ist mein Stundenplan",
+        "Was habe ich {timetableDate} für Vorlesungen",
+        "Welche Vorlesungen hab ich {timetableDate}"
+      ],
+      "inputs": [
+        {
+          "name": "timetableDate",
+          "type": {
+            "alexa": "AMAZON.DATE"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CanteenIntent",
+      "phrases": [
+        "Was gibt es heute zu essen",
+        "Mensa",
+        "Mensamahlzeiten vorlesen",
+        "Mahlzeiten",
+        "Was gibt es in der Mensa",
+        "Welche Mahlzeiten werden in der Mensa angeboten",
+        "Canteen"
+      ]
+    },
+    {
+      "name": "SetDefaultCanteenIntent",
+      "phrases": [
+        "Mensa {canteenNumber} auswählen",
+        "Standardmensa festlegen",
+        "Standardmensa ändern",
+        "standard mensa",
+        "standardmensa",
+        "standardmensa verändern",
+        "standardmensa anders machen",
+        "standard mensa ändern"
+      ],
+      "inputs": [
+        {
+          "name": "canteenNumber",
+          "type": {
+            "alexa": "AMAZON.NUMBER"
+          }
+        }
+      ]
+    },
+    {
+      "name": "viewAppointmentWithProfIntent",
+      "phrases": [
+        "Wann habe ich meinen Termin mit dem Professor",
+        "Um welche Uhrzeit habe ich Termine",
+        "Um welche Uhrzeit habe ich einen Termin",
+        "Wann ist der Termin mit {professorName}",
+        "Welche Termine habe ich",
+        "habe ich Termine",
+        "Lese meine Termine vor",
+        "termine mit profs einsehen",
+        "termine mit Professor einsehen",
+        "Termine mit Professor vorlesen"
+      ],
+      "inputs": [
+        {
+          "name": "professorName",
+          "type": {
+            "alexa": "AMAZON.Person"
+          }
+        }
+      ]
+    }
+  ],
+  "alexa": {
+    "interactionModel": {
+      "prompts": [
+        {
+          "id": "Elicit.Slot.1120021987437.905332624800",
+          "variations": [
+            {
+              "type": "PlainText",
+              "value": "Alles klar, mit welchem Professor möchtest du einen Termin vereinbaren?"
+            },
+            {
+              "type": "PlainText",
+              "value": "Mit welchem Professor soll ich einen Termin vereinbaren?"
+            }
+          ]
+        },
+        {
+          "id": "Confirm.Slot.186469474087.1029396093044",
+          "variations": [
+            {
+              "type": "PlainText",
+              "value": "Habe ich richtig verstanden, dass du einen Termin mit {professor} vereinbaren möchtest?"
+            },
+            {
+              "type": "PlainText",
+              "value": "Der Termin soll mit {professor} sein richtig?"
+            }
+          ]
+        },
+        {
+          "id": "Elicit.Slot.1120021987437.1197853466040",
+          "variations": [
+            {
+              "type": "PlainText",
+              "value": "Zu welchem Datum möchtest du einen Termin vereinbaren?"
+            },
+            {
+              "type": "PlainText",
+              "value": "Welches Datum würde dir gut passen?"
+            }
+          ]
+        },
+        {
+          "id": "Elicit.Slot.1120021987437.1197853466041",
+          "variations": [
+            {
+              "type": "PlainText",
+              "value": "Zu welcher Uhrzeit möchtest du einen Termin vereinbaren?"
+            },
+            {
+              "type": "PlainText",
+              "value": "Welche Uhrzeit soll ich angeben?"
+            },
+            {
+              "type": "PlainText",
+              "value": "Um wie viel Uhr?"
+            }
+          ]
+        },
+        {
+          "id": "Elicit.Slot.1120021987437.498905510534",
+          "variations": [
+            {
+              "type": "PlainText",
+              "value": "Was soll der Betreff von dem Termin sein?"
+            },
+            {
+              "type": "PlainText",
+              "value": "Was möchtest du als Betreff für den Termin angeben?"
+            }
+          ]
+        }
+      ],
+      "dialog": {
+        "intents": [
+          {
+            "name": "BookAppointmentIntent",
+            "confirmationRequired": false,
+            "prompts": {},
+            "slots": [
+              {
+                "name": "professor",
+                "type": "AMAZON.Person",
+                "confirmationRequired": true,
+                "elicitationRequired": true,
+                "prompts": {
+                  "confirmation": "Confirm.Slot.186469474087.1029396093044",
+                  "elicitation": "Elicit.Slot.1120021987437.905332624800"
+                }
+              },
+              {
+                "name": "date",
+                "type": "AMAZON.DATE",
+                "confirmationRequired": false,
+                "elicitationRequired": true,
+                "prompts": {
+                  "elicitation": "Elicit.Slot.1120021987437.1197853466040"
+                }
+              },
+              {
+                "name": "time",
+                "type": "AMAZON.TIME",
+                "confirmationRequired": false,
+                "elicitationRequired": true,
+                "prompts": {
+                  "elicitation": "Elicit.Slot.1120021987437.1197853466041"
+                }
+              },
+              {
+                "name": "subject",
+                "type": "AMAZON.SearchQuery",
+                "confirmationRequired": false,
+                "elicitationRequired": true,
+                "prompts": {
+                  "elicitation": "Elicit.Slot.1120021987437.498905510534"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "languageModel": {
+        "intents": [
+          {
+            "name": "AMAZON.CancelIntent",
+            "samples": ["nichts", "gar nichts", "nichts danke"]
+          },
+          {
+            "name": "AMAZON.HelpIntent",
+            "samples": [
+              "Hilfe",
+              "Ich weiß nicht weiter",
+              "Was kannst du schon alles",
+              "Was kann ich mit dem Skill machen",
+              "Wie funktioniert das hier",
+              "Kannst du mir helfen"
+            ]
+          },
+          {
+            "name": "AMAZON.StopIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.YesIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.NoIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.FallbackIntent",
+            "samples": []
+          }
+        ]
+      }
+    }
+  }
+}
