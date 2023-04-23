@@ -1,6 +1,6 @@
 # studentAI - A Student Helper Application with Alexa Skill
 
-[flussdiagramm](https://user-images.githubusercontent.com/104583409/233685663-6c08a33c-ed3c-4c36-bb75-f2d3fe8e713e.png)
+[Flow chart with all features](https://user-images.githubusercontent.com/104583409/233685663-6c08a33c-ed3c-4c36-bb75-f2d3fe8e713e.png)
 
 studentAI is an Alexa Skill designed to make the daily life of students easier by providing an intuitive interface for various features. The application is designed to be user-friendly and convenient, making it an ideal tool for busy students. StudiHelfer is built with the Jovo Framework (Node.js) and is integrated with Firebase for data storage and authentication.
 
